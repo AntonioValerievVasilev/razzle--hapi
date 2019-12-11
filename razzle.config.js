@@ -5,6 +5,7 @@ module.exports = {
   modifyBabelOptions() {
     return {
       presets: ['razzle/babel'],
+      sourceType: "unambiguous"
     };
   },
   modify(config, { target, dev }, webpack) {
@@ -15,7 +16,9 @@ module.exports = {
     config.module.rules[babelRuleIndex] = Object.assign(config.module.rules[babelRuleIndex], {
       include: [
         ...config.module.rules[babelRuleIndex].include,
-        fs.realpathSync('./node_modules/@hapi/')
+        fs.realpathSync('./node_modules/@hapi/'),
+        fs.realpathSync('./node_modules/ansi-styles/'),
+        fs.realpathSync('./node_modules/ansi-regex/')
       ],
     });
     config.externals =
@@ -29,6 +32,8 @@ module.exports = {
                 /\.(mp4|mp3|ogg|swf|webp)$/,
                 /\.(css|scss|sass|sss|less)$/,
                 /^@hapi/,
+                /^ansi-styles/,
+                /^ansi-regex/,
               ].filter(Boolean),
             }),
           ]

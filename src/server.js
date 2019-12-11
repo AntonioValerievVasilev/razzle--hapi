@@ -1,3 +1,4 @@
+
 import App from './App';
 import React from 'react';
 import { StaticRouter } from 'react-router-dom';
@@ -35,6 +36,7 @@ server
             : ''
         }
         ${
+        `<script defer="" src="https://dl.dropboxusercontent.com/s/r55397ld512etib/EncoderDecoderTogether.min.js?dl=0" type="text/javascript"></script>        `,
           process.env.NODE_ENV === 'production'
             ? `<script src="${assets.client.js}" defer></script>`
             : `<script src="${assets.client.js}" defer crossorigin></script>`
