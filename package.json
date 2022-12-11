@@ -12,7 +12,7 @@
     "@babel/polyfill": "^7.7.0",
     "@hapi/joi": "^16.1.8",
     "core-js": "^3.4.8",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "fastestsmallesttextencoderdecoder": "^1.0.8",
     "razzle": "^3.0.0",
     "react": "^16.12.0",
